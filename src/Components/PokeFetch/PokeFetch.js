@@ -45,32 +45,15 @@ class PokeFetch extends Component {
             pokeShadow: '',})
         })
         .catch((err) => console.log(err))
-    }, 5000)
+    }, 10000)
   }
 
-  componentWillUnmount(){
-    this.setState({
-      pokemonId: '',
-      pokeInfo: '',
-      pokeSprite: '',
-      pokeName: '',
-      pokeShadow: ''
-    })}
-  
-  // updatePokemon(req,res){
-  //   this.setState({
-  //     pokeSprite: res.sprites.front_default,
-  //     pokeName: res.species.name,
-  //     pokeShadow: '',
-  //   })
-  // }
 
   render() {
     return (
       <div className={'wrapper'}>
         <button className={'start'} onClick={() => this.fetchPokemon()}>Start!</button>
-        <button onClick={this.updatePokemon}>Update</button>
-        <h1 className={'timer'} >Timer Display</h1>
+        <h1 className={'timer'} >10</h1>
         <div className={'pokeWrap'}>
           <img className={'pokeShadow'} src={this.state.pokeShadow} />
           <img className={'pokeImg'} src ={this.state.pokeSprite} />
@@ -81,10 +64,35 @@ class PokeFetch extends Component {
   }
 }
 
-
-export default PokeFetch;
-
-
+// class Timer extends Component{
+//   constructor(){
+//     super();
+//     this.state = {
+//       seconds: 10,
+//     }
+//   }
+//   componentDidMount(){
+//     setInterval(() => {
+//       this.setState({
+//         seconds: this.state.seconds -1
+//       })
+//     }, 1000);
+//     if(this.state.seconds == 0){
+//       clearInterval()
+//     }
+//   }
+  
+  // render() {
+  //   return(
+  //     <div>
+  //     {this.state.seconds}
+  //     </div>
+  //     )
+  //   }
+  
+  
+  
+  export default PokeFetch;
 
 
 
